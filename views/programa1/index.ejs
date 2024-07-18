@@ -1,0 +1,52 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header">
+            <h2>Liberação de artigo</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/programa1/save">
+                <!-- <input class="form-control" type="text" name="article" placeholder="Descrição do artigo"><br> -->
+                <input class="form-control" type="text" name="description" placeholder="Descrição do artigo"><br>
+                <input class="form-control" type="text" name="exec" placeholder="Executor"><br>
+                <input class="form-control" type="text" name="requester" placeholder="Requerente"><br>
+                <input class="form-control" type="text" name="dpto" placeholder="Departamento"><br>
+                <input class="form-control" type="text" name="release" placeholder="Notícia"><br>
+                <button class="btn btn-success">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <hr>
+    <h2>Artigos liberados</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Artigo</th>
+                <th>Descrição</th>
+                <th>Executor</th>
+                <th>Requerente</th>
+                <th>Departamento</th>
+                <th>Liberação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% articles.forEach(articles => { %>
+            <tr>
+                <th><%= articles.article %></th>
+                <th><%= articles.description %></th>
+                <th><%= articles.exec %></th>
+                <th><%= articles.requester %></th>
+                <th><%= articles.dpto %></th>
+                <th><%= articles.release %></th>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer.ejs') %>

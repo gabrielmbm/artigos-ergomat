@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database/database')
 const machinesController = require('./machines/MachinesController')
-const articlesController = require('./articles/ArticlesController')
+const programa1Controller = require('./programa1/Programa1Controller')
 
 // EJS
 app.set('view engine', 'ejs');
@@ -27,10 +27,10 @@ connection
     });
 
 // Import rotas de Machine
-app.use('/', machinesController);
+// app.use('/', machinesController);
 
 // Import rotas de Artigos
-app.use('/', articlesController);
+app.use('/', programa1Controller);
 
 app.get('/', (req, res) => {
     res.render('index')

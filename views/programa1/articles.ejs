@@ -1,0 +1,34 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container">
+    <hr>
+    <a class="btn btn-success" href="/programa1">Liberar novo artigo</a>
+    <hr>
+    <h2>Artigos liberados</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Artigo</th>
+                <th>Descrição</th>
+                <th>Executor</th>
+                <th>Requerente</th>
+                <th>Departamento</th>
+                <th>Liberação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% articles.forEach(articles => { %>
+            <tr>
+                <th><%= articles.article %></th>
+                <th><%= articles.description %></th>
+                <th><%= articles.exec %></th>
+                <th><%= articles.requester %></th>
+                <th><%= articles.dpto %></th>
+                <th><%= articles.release %></th>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer.ejs') %>
