@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') %>
+
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <h4>Projetos especiais</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/projetosespeciais/save">
+                <%- include('../partials/form-cadastro.ejs') %>
+            </form>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<%- include('../partials/tabela-artigos.ejs') %>
+<%- include('../partials/footer.ejs') %>
