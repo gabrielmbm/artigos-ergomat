@@ -2,8 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database/database')
-const machinesController = require('./machines/MachinesController')
-const programa1Controller = require('./programa1/Programa1Controller')
+const programa1Controller = require('./machines/programa1/Programa1Controller')
+const tngController = require('./machines/tng/TngController')
+const tndController = require('./machines/tnd/TndController')
+const tbatbcController = require('./machines/tbatbc/TbatbcController')
+const tbanextController = require('./machines/tbanext/TbanextController')
+const tbcnextController = require('./machines/tbcnext/TbcnextController')
 
 // EJS
 app.set('view engine', 'ejs');
@@ -26,16 +30,20 @@ connection
         console.log(error)
     });
 
-// Import rotas de Machine
-// app.use('/', machinesController);
-
-// Import rotas de Artigos
+// Importando rotas
 app.use('/', programa1Controller);
+app.use('/', tngController);
+app.use('/', tndController);
+app.use('/', tbatbcController);
+app.use('/', tbanextController);
+app.use('/', tbcnextController);
 
 app.get('/', (req, res) => {
     res.render('index')
 });
 
-app.listen(8080, () => {
-    console.log('Server On')
+const PORT = 8080;
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log('Server running')
 });

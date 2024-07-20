@@ -1,0 +1,29 @@
+<div class="container">
+    <!-- <div class="bg-danger d-flex align-items-center">
+        <h3 class="mx-auto text-white">Artigos liberados</h3>
+    </div> -->
+    <table class="table">
+        <thead class="bg-danger text-white">
+            <tr>
+                <th class="text-center">Artigo</th>
+                <th>Descrição</th>
+                <th class="text-center">Executor</th>
+                <th class="text-center">Requerente</th>
+                <th class="text-center">Departamento</th>
+                <th class="text-center">Liberação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% articles.forEach(articles => { %>
+            <tr>
+                <th class="text-center"><%= articles.article %></th>
+                <th><%= articles.description %></th>
+                <th class="text-center"><%= articles.exec %></th>
+                <th class="text-center"><%= articles.requester %></th>
+                <th class="text-center"><%= articles.dpto %></th>
+                <th class="text-center"><%= articles.release %></th>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

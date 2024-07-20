@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const connection = require('../database/database');
+const connection = require('../../database/database');
 
-const Article = connection.define('articlesPrograma1', {
+const Article = connection.define('articlesTbcnext', {
     article:{
         type: Sequelize.INTEGER,
         allowNull: false
